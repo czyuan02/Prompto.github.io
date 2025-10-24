@@ -1,10 +1,7 @@
 ---
-title: "Our Memories"
+title: "Our Memories☀️"
 description: "A tiny timeline and photo grid of our memories"
-output:
-html_document:
-self_contained: true
-toc: false
+
 ---
 
 <!-- 温馨·简洁样式（不依赖外部字体，适配手机/平板/桌面） -->
@@ -172,7 +169,7 @@ figcaption { text-align: center; }
   </figure>
   <figure class="card">
     <img src="photo/ny3.JPG" alt="合照3">
-    <figcaption>🎁</figcaption>
+    <figcaption>👻</figcaption>
   </figure>
 </div>
 
