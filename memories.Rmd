@@ -1,0 +1,179 @@
+---
+title: "Our Memories"
+description: "A tiny timeline and photo grid of our memories"
+output:
+html_document:
+self_contained: true
+toc: false
+---
+
+<!-- 温馨·简洁样式（不依赖外部字体，适配手机/平板/桌面） -->
+<style>
+:root{
+  --bg: #FFF7F0;       /* 奶油米色背景 */
+  --card: #FFFFFF;     /* 卡片纯白 */
+  --border:#F0E7E2;    /* 轻边框 */
+  --text:#433;         /* 柔和文字色 */
+  --muted:#7a6f6a;     /* 次要文字色 */
+  --shadow: 0 6px 18px rgba(0,0,0,0.06);
+  --radius: 16px;
+  --gap: 14px;
+}
+
+html, body { background: var(--bg); }
+.main-container { max-width: 980px; color: var(--text); }
+
+/* 标题更温柔一些 */
+h1, h2, h3 {
+  letter-spacing: 0.2px;
+  color: var(--text);
+}
+h2 {
+  margin: 26px 0 12px;
+  font-weight: 700;
+}
+
+/* 柔和分隔线 */
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin: 18px 0;
+}
+
+/* 自适应网格：手机1列，平板2列，桌面3列 */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .grid { grid-template-columns: 1fr 1fr 1fr; } }
+
+/* 两列网格（背影区） */
+.grid-2 {
+  display: grid; gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+/* 统一图片卡片 */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* 温柔过渡（不夸张） */
+.card, .card img { transition: transform .25s ease; }
+.card:hover { transform: translateY(-2px); }
+
+/* 图片填充：高度可改 200~280 之间 */
+.card img { width:100%; height: 220px; object-fit: cover; display:block; }
+
+.card img,
+.hero img {
+  width: 100%;
+  height: 240px;      /* 统一高度：可改 220 / 260 等 */
+  object-fit: cover;  /* 居中裁切，不变形 */
+  display: block;
+}
+
+/* 单图展示（封面 & 打游戏） */
+.hero { display:block; margin: 8px auto 10px; max-width: 880px; }
+.hero img { width:100%; height: auto; object-fit: cover; }
+
+/* 图片说明 */
+figcaption {
+  padding: 10px 12px 12px;
+  font-size: .96rem; line-height: 1.55;
+  color: var(--muted);
+}
+
+/* 返回按钮（轻样式） */
+.back-top {
+  display: inline-block; margin-top: 22px;
+  font-size: .95rem; color: var(--muted);
+  text-decoration: none; border-bottom: 1px dashed var(--border);
+}
+.back-top:hover { color: var(--text); border-bottom-color: var(--text); }
+figcaption { text-align: center; }
+</style>
+
+<p>&nbsp;</p>
+
+## ✨🌠 COOL
+<figure class="hero card">
+  <img src="photo/b.jpg" alt="小猫">
+  <figcaption> COOL✨</figcaption>
+</figure>
+
+<hr/>
+
+## 春 卷
+<div class="grid">
+  <figure class="card">
+    <img src="photo/l1.jpeg" alt="搞笑1">
+    <figcaption>裹</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/l5.jpeg" alt="搞笑2">
+    <figcaption>裹裹</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/l3.jpeg" alt="搞笑3">
+    <figcaption>裹裹裹</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/l4.jpeg" alt="搞笑4">
+    <figcaption>裹裹裹裹</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/w.jpeg" alt="搞笑5">
+    <figcaption>在干嘛</figcaption>
+  </figure>
+</div>
+
+<hr/>
+
+## “背 影”
+<div class="grid-2">
+  <figure class="card">
+    <img src="photo/back.jpeg" alt="背影1">
+    <figcaption>Hello</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/back2.jpeg" alt="背影2">
+    <figcaption>在干嘛</figcaption>
+  </figure>
+</div>
+
+<hr/>
+
+## 揪住臭狸子
+<figure class="hero card">
+  <img src="photo/game.PNG" alt="打游戏我拽她">
+  <figcaption>抓到一只大狸子</figcaption>
+</figure>
+
+<hr/>
+
+## 🤍啦啦啦!
+<div class="grid">
+  <figure class="card">
+    <img src="photo/recent.JPG" alt="合照1">
+    <figcaption>🎉</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/ny2.jpg" alt="合照2">
+    <figcaption>🎈</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/ny3.JPG" alt="合照3">
+    <figcaption>🎁</figcaption>
+  </figure>
+</div>
+
+<a class="back-top" href="index.html">← 返回 Birthday 首页</a>

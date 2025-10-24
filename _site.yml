@@ -1,0 +1,9 @@
+name: "Yanqi Birthday"
+output_dir: "."
+navbar:
+  title: "🎂 Yanqi"
+  left:
+    - text: "Birthday"
+      href: index.html
+    - text: "Memories"
+      href: memories.html
