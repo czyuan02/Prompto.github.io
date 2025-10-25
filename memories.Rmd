@@ -101,7 +101,7 @@ figcaption { text-align: center; }
 
 <p>&nbsp;</p>
 
-## ✨🌠 COOL
+## ✨COOL
 <figure class="hero card">
   <img src="photo/b.jpg" alt="小猫">
   <figcaption> COOL✨</figcaption>

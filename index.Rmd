@@ -3,7 +3,7 @@ title: "Happy Birthday, Yanqi!"
 description: "A cute birthday page"
 ---
 
-<!-- 样式：修复导航遮挡 + 粉彩风 --> <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;600;800&display=swap'); /* 顶部留白：避免被 navbar 遮住 */ body { padding-top: 70px !important; } .navbar { margin-bottom: 0 !important; } .main-container { padding-top: 0 !important; } :root{ --pink:#ff9ecb; --peach:#ffd3b6; --mint:#c7f9cc; --sky:#bde0fe; --lav:#e4c1f9; --sun:#fff3b0; } html, body { height:100%; margin:0; padding:0; overflow-x:hidden; background: radial-gradient(1000px 600px at 70% -100px, var(--sun), transparent), linear-gradient(135deg, var(--peach), var(--sky)); font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial; } .container { max-width:960px; margin:0 auto; padding:18px 22px 72px; position:relative; z-index:2; } .huge-title{ font-family:'Pacifico', cursive; font-size:3.0rem; text-align:center; color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.12); margin-top:6px; } .subtitle{ text-align:center; font-size:1.05rem; color:#fff; margin-top:.3rem; } .card{ background:rgba(255,255,255,.95); border-radius:24px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.08); } .grid{ display:grid; grid-template-columns:1fr; gap:18px; } @media (min-width:800px){ .grid{ grid-template-columns:1.2fr .8fr; } } .btn{ display:inline-block; padding:10px 16px; border-radius:12px; background:var(--lav); color:#5a2f7e; font-weight:800; text-decoration:none; box-shadow:0 6px 14px rgba(0,0,0,.12); } .btn:hover{ filter:brightness(1.05); transform:translateY(-1px); } /* 宝丽来卡片 */ .pola{ background:#fff; border-radius:16px; padding:12px 12px 36px; box-shadow:0 10px 28px rgba(0,0,0,.15); text-align:center; } .pola img{ width:100%; border-radius:12px; display:block; } .pola .cap{ margin-top:8px; font-weight:600; color:#555; } .pola + .pola{ margin-top:18px; } /* 气球/彩纸层放到内容下面 */ #balloons, .confetti { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; } .balloon{ position:absolute; bottom:-160px; width:60px; height:80px; border-radius:50% 50% 45% 55%/55% 55% 45% 45%; opacity:.9; animation:floatUp var(--dur) linear infinite; filter:drop-shadow(0 8px 12px rgba(0,0,0,.14)); } .balloon:after{ content:''; position:absolute; bottom:-20px; left:50%; width:2px; height:60px; background:rgba(0,0,0,.12); transform:translateX(-50%); } @keyframes floatUp{ 0%{transform:translateY(0) translateX(0) rotate(0);} 50%{transform:translateY(-50vh) translateX(12px);} 100%{transform:translateY(-105vh) translateX(-12px) rotate(2deg);} } .confetti i{ position:absolute; width:10px; height:14px; opacity:.9; animation:fall var(--t) linear forwards; } @keyframes fall{ from{transform:translateY(-10vh) rotate(0);} to{transform:translateY(110vh) rotate(720deg);} }
+<!-- 样式：修复导航遮挡 + 粉彩风 --> <style> @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@300;600;800&display=swap');  /* 顶部留白：避免被 navbar 遮住 */ body { padding-top: 70px !important; } .navbar { margin-bottom: 0 !important; } .main-container { padding-top: 0 !important; } :root{ --pink:#ff9ecb; --peach:#ffd3b6; --mint:#c7f9cc; --sky:#bde0fe; --lav:#e4c1f9; --sun:#fff3b0; } html, body { height:100%; margin:0; padding:0; overflow-x:hidden; background: radial-gradient(1000px 600px at 70% -100px, var(--sun), transparent), linear-gradient(135deg, var(--peach), var(--sky)); font-family:'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial; } .container { max-width:960px; margin:0 auto; padding:18px 22px 72px; position:relative; z-index:2; } .huge-title{ font-family:'Pacifico', cursive; font-size:3.0rem; text-align:center; color:#fff; text-shadow:0 4px 18px rgba(0,0,0,.12); margin-top:6px; } .subtitle{ text-align:center; font-size:1.05rem; color:#fff; margin-top:.3rem; } .card{ background:rgba(255,255,255,.95); border-radius:24px; padding:22px; box-shadow:0 10px 30px rgba(0,0,0,.08); } .grid{ display:grid; grid-template-columns:1fr; gap:18px; } @media (min-width:800px){ .grid{ grid-template-columns:1.2fr .8fr; } } .btn{ display:inline-block; padding:10px 16px; border-radius:12px; background:var(--lav); color:#5a2f7e; font-weight:800; text-decoration:none; box-shadow:0 6px 14px rgba(0,0,0,.12); } .btn:hover{ filter:brightness(1.05); transform:translateY(-1px); } /* 宝丽来卡片 */ .pola{ background:#fff; border-radius:16px; padding:12px 12px 36px; box-shadow:0 10px 28px rgba(0,0,0,.15); text-align:center; } .pola img{ width:100%; border-radius:12px; display:block; } .pola .cap{ margin-top:8px; font-weight:600; color:#555; } .pola + .pola{ margin-top:18px; } /* 气球/彩纸层放到内容下面 */ #balloons, .confetti { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; } .balloon{ position:absolute; bottom:-160px; width:60px; height:80px; border-radius:50% 50% 45% 55%/55% 55% 45% 45%; opacity:.9; animation:floatUp var(--dur) linear infinite; filter:drop-shadow(0 8px 12px rgba(0,0,0,.14)); } .balloon:after{ content:''; position:absolute; bottom:-20px; left:50%; width:2px; height:60px; background:rgba(0,0,0,.12); transform:translateX(-50%); } @keyframes floatUp{ 0%{transform:translateY(0) translateX(0) rotate(0);} 50%{transform:translateY(-50vh) translateX(12px);} 100%{transform:translateY(-105vh) translateX(-12px) rotate(2deg);} } .confetti i{ position:absolute; width:10px; height:14px; opacity:.9; animation:fall var(--t) linear forwards; } @keyframes fall{ from{transform:translateY(-10vh) rotate(0);} to{transform:translateY(110vh) rotate(720deg);} }
 .navbar { background: transparent !important; box-shadow: none !important; }
 .navbar > .container,
 .navbar > .container-fluid {
@@ -11,13 +11,141 @@ description: "A cute birthday page"
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-</style> <div class="container"> <h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> <br> 亲爱的徐妍琦，我最好的朋友，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直 </p> <ul style="margin-top:0; line-height:1.9;"> <li>健康顺遂，睡个好觉</li> <li>朝朝如愿，岁岁平安</li> <li>自由恣意，坦荡随心</li>
+</style> <div class="container"> <h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> <br> 亲爱的徐妍琦，我最好的朋友，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直 </p> <ul style="margin-top:0; line-height:1.9;font-style:italic;"> <li>健康顺遂，睡个好觉</li> <li>朝朝如愿，岁岁平安</li> <li>自由恣意，坦荡随心</li>
 </li></li>
-<ul style="margin-top:0; line-height:1.9; list-style:none; padding-left:0;"> <br>
+<ul style="margin-top:0; line-height:1.9; list-style:none; padding-left:0;font-style:italic;"> <br>
 <li style="font-size:2.25rem;"><em> “None of us are as young as we were</em></li>
   <li style="font-size:2.25rem;"><em>So what?</em></li>
   <li style="font-size:2.25rem;"><em>Friendship never ages” 🌸</em></li>
-</ul> <p class="center" style="margin-top:.8rem;"> <a class="btn" href="memories.html">→ 看我们的回忆 ✨</a> <a class="btn" style="margin-left:10px;" href="#" id="confetti-btn">点我撒花 🎉</a> </p> </div>
+</ul> <p class="center" style="margin-top:.8rem;"> <br> <a class="btn" href="memories.html">→ 看我们的回忆 ✨</a> <a class="btn" style="margin-left:10px;" href="#" id="confetti-btn">点我撒花 🎊</a> </p> </div>
 
 
-<div class="right-photos" markdown="0"> <div class="pola"> <img src="photo/snoopy.gif" alt="Snoopy says Happy Birthday!"> <div class="cap">生日快乐萱 🎉</div> </div> <div class="pola"> <img src="photo/birth.jpg" alt="Our sweet memory"> <div class="cap">臭狸子18岁生日📷</div> </div> </div> </div> </div> <!-- 气球与彩纸 --> <div id="balloons"></div> <div class="confetti" id="confetti"></div> <script> const colors=['#ff9ecb','#c7f9cc','#e4c1f9','#bde0fe','#ffd3b6']; function r(min,max){ return Math.floor(Math.random()*(max-min+1))+min } const layer=document.getElementById('balloons'); for(let i=0;i<20;i++){ const b=document.createElement('div'); b.className='balloon'; b.style.left=r(0,100)+'vw'; b.style.background=colors[r(0,colors.length-1)]; b.style.setProperty('--dur',(9+Math.random()*6)+'s'); b.style.animationDelay=(Math.random()*6)+'s'; b.style.transform=`scale(${0.8+Math.random()*0.7})`; layer.appendChild(b); } const confetti=document.getElementById('confetti'); function burst(){ for(let i=0;i<120;i++){ const c=document.createElement('i'); c.style.left=r(0,100)+'vw'; c.style.top='-10vh'; c.style.background=colors[r(0,colors.length-1)]; c.style.transform=`rotate(${r(0,360)}deg)`; c.style.setProperty('--t',(3+Math.random()*3)+'s'); confetti.appendChild(c); setTimeout(()=>c.remove(),4000); } } document.getElementById('confetti-btn').addEventListener('click', burst); </script>
+<div class="right-photos" markdown="0"> <div class="pola"> <img src="photo/snoopy.gif" alt="Snoopy says Happy Birthday!"> <div class="cap">生日快乐萱 🎉</div> </div> <div class="pola"> <img src="photo/birth.jpg" alt="Our sweet memory"> <div class="cap">臭狸子18岁生日📷</div> </div> </div> </div> </div> <!-- 气球与彩纸 --> <div id="balloons"></div> <div class="confetti" id="confetti"></div> <script> const colors=['#ff9ecb','#c7f9cc','#e4c1f9','#bde0fe','#ffd3b6']; function r(min,max){ return Math.floor(Math.random()*(max-min+1))+min } const layer=document.getElementById('balloons'); for(let i=0;i<20;i++){ const b=document.createElement('div'); b.className='balloon'; b.style.left=r(0,100)+'vw'; b.style.background=colors[r(0,colors.length-1)]; b.style.setProperty('--dur',(9+Math.random()*6)+'s'); b.style.animationDelay=(Math.random()*6)+'s'; b.style.transform=`scale(${0.8+Math.random()*0.7})`; layer.appendChild(b); } const confetti=document.getElementById('confetti'); function burst(){ for(let i=0;i<120;i++){ const c=document.createElement('i'); c.style.left=r(0,100)+'vw'; c.style.top='-10vh'; c.style.background=colors[r(0,colors.length-1)]; c.style.transform=`rotate(${r(0,360)}deg)`; c.style.setProperty('--t',(3+Math.random()*3)+'s'); confetti.appendChild(c); setTimeout(()=>c.remove(),4000); } } document.getElementById('confetti-btn').addEventListener('click', burst); </script><!-- 追加：神秘礼物盒（无需改上面任何代码） -->
+<script>
+(function(){
+  // 找到“撒花”按钮，并在其后插入“神秘礼物盒”按钮
+  const confettiBtn = document.getElementById('confetti-btn');
+  if(confettiBtn){
+    const giftBtn = document.createElement('a');
+    giftBtn.className = 'btn';
+    giftBtn.id = 'gift-btn';
+    giftBtn.textContent = '打开神秘礼物 🎁';
+    giftBtn.href = '#';
+    giftBtn.style.marginLeft = '10px';
+    confettiBtn.parentNode.appendChild(giftBtn);
+
+    // 创建模态框（追加到 <body>）
+    const modal = document.createElement('div');
+    modal.id = 'gift-modal';
+    modal.setAttribute('aria-hidden','true');
+    modal.setAttribute('role','dialog');
+    modal.style.cssText = `
+      display:none; position:fixed; inset:0;
+      background:rgba(0,0,0,.35); backdrop-filter:saturate(120%) blur(2px);
+      z-index:9999; align-items:center; justify-content:center;`;
+    modal.innerHTML = `
+      <div style="background:#fff; border-radius:18px; padding:22px;
+                  max-width:520px; margin:0 16px; text-align:center;
+                  box-shadow:0 10px 30px rgba(0,0,0,.12);">
+        <h3 style="margin:0 0 6px;">写给狸子</h3>
+        <p style="line-height:1.8; margin:6px 0 14px;font-family:'Pacifico', cursive; font-size:2.5rem;">
+          My lifelong companion and support, without you it would be unimaginable.<br> Dearest Yanqi, many happy returns🌠.
+        </p>
+        <a class="btn" id="gift-close" style="margin-top:6px;"> 🎉 </a>
+      </div>`;
+    document.body.appendChild(modal);
+
+    // 打开/关闭逻辑
+    function show(){ modal.style.display='flex'; modal.setAttribute('aria-hidden','false'); }
+    function hide(){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); }
+
+    giftBtn.addEventListener('click', (e)=>{ e.preventDefault(); show(); });
+    modal.addEventListener('click', (e)=>{ if(e.target===modal) hide(); });
+    document.addEventListener('click', (e)=>{ if(e.target && e.target.id==='gift-close') hide(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') hide(); });
+  }
+})();
+</script>
+
+<!-- 追加：在 .grid 最后插入一个可切换的双图轮播（不改上面任何内容） -->
+<script>
+(function(){
+  const grid = document.querySelector('.grid');
+  if(!grid) return;
+
+  // 在这里填入你想切换的两张图片路径
+  const imgs = [
+    'photo/happy-cat-31.gif', // ← 第1张
+    'photo/hapby-cat-15.gif'  // ← 第2张（改成你的图片路径）
+  ];
+  const caps = ['🐱', '🍰']; // 可选标题，想关掉就设为 ['','']
+
+  // 外层：横跨两列 + 居中
+  const row = document.createElement('div');
+  row.style.cssText = 'grid-column:1 / -1; display:flex; justify-content:center; margin-top:18px;';
+
+  // 轮播容器（卡片风格）
+  const box = document.createElement('div');
+  box.style.cssText = 'position:relative; background:rgba(255,255,255,.95); border-radius:16px; padding:12px; box-shadow:0 10px 28px rgba(0,0,0,.10);';
+
+  // 图片
+  const img = document.createElement('img');
+  img.src = imgs[0];
+  img.alt = 'Happy moment';
+  img.style.cssText = 'display:block; width:min(92vw, 560px); height:auto; border-radius:12px;';
+
+  // 标题
+  const cap = document.createElement('div');
+  cap.textContent = caps[0] || '';
+  cap.style.cssText = 'text-align:center; margin-top:8px; color:#555; font-weight:600;';
+
+  // 左右切换按钮
+  function mkBtn(txt, side){
+    const b = document.createElement('button');
+    b.textContent = txt;
+    b.setAttribute('type','button');
+    b.style.cssText = `
+      position:absolute; top:50%; transform:translateY(-50%);
+      ${side}:8px; padding:8px 10px; border:none; border-radius:12px;
+      background:#e4c1f9; color:#5a2f7e; font-weight:800; cursor:pointer;
+      box-shadow:0 6px 14px rgba(0,0,0,.12); opacity:.9;
+    `;
+    b.onmouseenter = ()=> b.style.filter = 'brightness(1.05)';
+    b.onmouseleave = ()=> b.style.filter = '';
+    return b;
+  }
+  const prev = mkBtn('‹', 'left');
+  const next = mkBtn('›', 'right');
+
+  // 逻辑
+  let i = 0;
+  function show(idx){
+    i = (idx + imgs.length) % imgs.length;
+    img.src = imgs[i];
+    if(caps && caps.length === imgs.length) cap.textContent = caps[i] || '';
+  }
+  prev.addEventListener('click', ()=> show(i-1));
+  next.addEventListener('click', ()=> show(i+1));
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'ArrowLeft')  show(i-1);
+    if(e.key === 'ArrowRight') show(i+1);
+  });
+
+  // 触摸滑动（手机）
+  let sx = null;
+  img.addEventListener('touchstart', (e)=>{ sx = e.touches[0].clientX; }, {passive:true});
+  img.addEventListener('touchend', (e)=>{
+    if(sx==null) return;
+    const dx = e.changedTouches[0].clientX - sx;
+    if(Math.abs(dx) > 30){ dx > 0 ? show(i-1) : show(i+1); }
+    sx = null;
+  }, {passive:true});
+
+  box.appendChild(img);
+  box.appendChild(prev);
+  box.appendChild(next);
+  box.appendChild(cap);
+  row.appendChild(box);
+  grid.appendChild(row); // 关键：插在 .grid 的最后
+})();
+</script>
