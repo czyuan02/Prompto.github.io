@@ -131,6 +131,10 @@ figcaption { text-align: center; }
     <img src="photo/w.jpeg" alt="搞笑5">
     <figcaption>在干嘛</figcaption>
   </figure>
+  <figure class="card">
+    <img src="photo/look.jpg" alt="搞笑6" loading="lazy">
+    <figcaption>呃</figcaption>
+  </figure>
 </div>
 
 <hr/>
@@ -149,10 +153,19 @@ figcaption { text-align: center; }
 
 <hr/>
 
+
 ## 揪住臭狸子
 <figure class="hero card">
   <img src="photo/game.PNG" alt="打游戏我拽她">
   <figcaption>抓到一只大狸子</figcaption>
+</figure>
+
+<hr/>
+
+## Hi👋
+<figure class="hero card" style="max-width:250px; margin:auto;">
+  <img src="photo/petty.jpg" alt="打游戏我拽她" style="width:100%; height:auto;" loading="lazy">
+  <figcaption>🫡</figcaption>
 </figure>
 
 <hr/>
@@ -170,6 +183,18 @@ figcaption { text-align: center; }
   <figure class="card">
     <img src="photo/ny3.JPG" alt="合照3">
     <figcaption>👻</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/cat.jpeg " alt="合照4">
+    <figcaption>🐱</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/ce.jpg" alt="合照5">
+    <figcaption>某种神秘仪式🎃</figcaption>
+  </figure>
+  <figure class="card">
+    <img src="photo/wash.jpg" alt="合照6">
+    <figcaption>🌈</figcaption>
   </figure>
 </div>
 
