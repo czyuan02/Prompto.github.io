@@ -162,7 +162,7 @@ const timer = setInterval(render, 1000);
     'photo/happy-cat-31.gif', // ← 第1张
     'photo/hapby-cat-15.gif'  // ← 第2张（改成你的图片路径）
   ];
-  const caps = ['🐱', '🍰']; // 可选标题，想关掉就设为 ['','']
+  const caps = ['🐱→', '🍰']; // 可选标题，想关掉就设为 ['','']
 
   // 外层：横跨两列 + 居中
   const row = document.createElement('div');
