@@ -97,11 +97,59 @@ figcaption {
 }
 .back-top:hover { color: var(--text); border-bottom-color: var(--text); }
 figcaption { text-align: center; }
+
+.cn-song{
+  font-family:
+    "Songti SC", "STSong", "SimSun", "NSimSun",
+    "Noto Serif CJK SC", "Source Han Serif SC",
+    "PMingLiU", "MingLiU", "Times New Roman", serif !important;
+  line-height: 1.9;
+  font-weight: 500;
+}
+
+.quote-center{
+  text-align: center;
+  margin: 18px 0 6px;
+  font-size: clamp(1.4rem, 3vw, 2.2rem); /* 自适应放大 */
+  font-weight: 600;                      /* 稍微加粗 */
+  letter-spacing: 0.4px;                 /* 细微字距更好看 */
+}
+
+.center-title { text-align: center; }
+
+
+.cn-rounded{
+  font-family:
+    "PingFang SC", "HarmonyOS Sans SC", "MiSans",
+    "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
+  letter-spacing: 0.4px;
+}
+
+.cute-roundstack{
+  font-family:
+    "PingFang SC",            /* macOS */
+    "HarmonyOS Sans SC",      /* 华为 */
+    "MiSans",                 /* 小米 */
+    "Noto Sans CJK SC", "Source Han Sans SC", /* 思源黑体 */
+    "Microsoft YaHei", "Microsoft YaHei UI",  /* Windows */
+    "WenQuanYi Micro Hei",
+    Arial, sans-serif;
+  letter-spacing: .4px;
+  font-weight: 600;           /* 标题更可爱粗一点 */
+}
+
+
+@keyframes floaty{ 0%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } 100%{ transform:translateY(0) } }
+.float-emoji{ display:inline-block; animation: floaty 2.8s ease-in-out infinite; }
+.float-emoji:nth-child(2){ animation-delay:.4s }
+.float-emoji:nth-child(3){ animation-delay:.8s }
+
+
 </style>
 
 <p>&nbsp;</p>
 
-## ✨COOL
+## ✨COOL {.center-title .cn-rounded}
 <figure class="hero card">
   <img src="photo/b.jpg" alt="小猫">
   <figcaption> COOL✨</figcaption>
@@ -109,7 +157,7 @@ figcaption { text-align: center; }
 
 <hr/>
 
-## 春 卷
+## 春 卷 {.center-title .cute-roundstack}
 <div class="grid">
   <figure class="card">
     <img src="photo/l1.jpeg" alt="搞笑1">
@@ -139,7 +187,7 @@ figcaption { text-align: center; }
 
 <hr/>
 
-## “背 影”
+## “背 影” {.center-title .cute-roundstack}
 <div class="grid-2">
   <figure class="card">
     <img src="photo/back.jpeg" alt="背影1">
@@ -153,8 +201,14 @@ figcaption { text-align: center; }
 
 <hr/>
 
+<p style="text-align:center; font-size:1.6rem;">
+  <span class="float-emoji">🍓</span>
+  <span class="float-emoji">🍑</span>
+  <span class="float-emoji">🍰</span>
+</p>
 
-## 揪住臭狸子
+
+## 揪住臭狸子 {.center-title .cute-roundstack}
 <figure class="hero card">
   <img src="photo/game.PNG" alt="打游戏我拽她">
   <figcaption>抓到一只大狸子</figcaption>
@@ -162,7 +216,7 @@ figcaption { text-align: center; }
 
 <hr/>
 
-## Hi👋
+## Hi👋 {.cute-roundstack}
 <figure class="hero card" style="max-width:250px; margin:auto;">
   <img src="photo/petty.jpg" alt="打游戏我拽她" style="width:100%; height:auto;" loading="lazy">
   <figcaption>🫡</figcaption>
@@ -170,7 +224,7 @@ figcaption { text-align: center; }
 
 <hr/>
 
-## 🤍啦啦啦!
+## 🤍啦啦啦! {.center-title .cute-roundstack}
 <div class="grid">
   <figure class="card">
     <img src="photo/ny2.jpg " alt="合照1">
@@ -190,12 +244,16 @@ figcaption { text-align: center; }
   </figure>
   <figure class="card">
     <img src="photo/ce.jpg" alt="合照5">
-    <figcaption>某种神秘仪式🎃</figcaption>
+    <figcaption>某种神秘仪式🕯️</figcaption>
   </figure>
   <figure class="card">
     <img src="photo/wash.jpg" alt="合照6">
     <figcaption>🌈</figcaption>
   </figure>
 </div>
+
+
+<hr/>
+<p class="cn-song quote-center"> 愿岁并谢 与长友兮 </p>
 
 <a class="back-top" href="index.html">← 返回 Birthday 首页</a>
