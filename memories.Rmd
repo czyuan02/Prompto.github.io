@@ -143,7 +143,7 @@ figcaption { text-align: center; }
   </figure>
   <figure class="card">
     <img src="photo/back2.jpeg" alt="背影2">
-    <figcaption>在干嘛</figcaption>
+    <figcaption>又在干嘛</figcaption>
   </figure>
 </div>
 

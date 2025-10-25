@@ -1,7 +1,15 @@
 name: "Yanqi Birthday"
 output_dir: "."
+
+output:
+  html_document:
+    # theme: flatly
+    highlight: tango
+    includes:
+      after_body: bgm.html
+      
 navbar:
-  title: "🎂 Yanqi"
+  title: "🎂妍琦"
   left:
     - text: "Birthday"
       href: index.html

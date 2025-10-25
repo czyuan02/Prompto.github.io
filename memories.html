@@ -30,8 +30,6 @@
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -42,16 +40,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -238,7 +226,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">🎂 Yanqi</a>
+      <a class="navbar-brand" href="index.html">🎂妍琦</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -420,7 +408,7 @@ Hello
 <figure class="card">
 <img src="photo/back2.jpeg" alt="背影2">
 <figcaption>
-在干嘛
+又在干嘛
 </figcaption>
 </figure>
 </div>
@@ -461,6 +449,31 @@ Hello
 <p><a class="back-top" href="index.html">← 返回 Birthday 首页</a></p>
 </div>
 
+<!-- 背景音乐片段：全站加载 -->
+<audio id="bgm" preload="auto" autoplay muted loop playsinline>
+  <source src="Porsche.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" aria-label="Toggle background music"
+        style="position:fixed; right:16px; bottom:16px; z-index:9999;
+               border:none; border-radius:999px; padding:10px 12px;
+               box-shadow:0 6px 18px rgba(0,0,0,.15); font-size:18px;
+               background:#fff;">🔇</button>
+
+<script>
+const audio = document.getElementById('bgm');
+const btn   = document.getElementById('music-toggle');
+const saved = localStorage.getItem('bgmEnabled');
+let wantSound = saved === 'true';
+function setIcon(){ btn.textContent = (audio.muted || audio.paused) ? '🔇' : '🔊'; }
+function tryAutoplay(){ audio.muted = !wantSound; audio.play().then(setIcon).catch(()=>{ audio.muted = true; setIcon(); }); }
+btn.addEventListener('click', async () => {
+  if (audio.paused) { audio.muted = false; try{ await audio.play(); }catch(e){}; wantSound = true; }
+  else { audio.muted = !audio.muted; if (!audio.muted && audio.paused) { try{ await audio.play(); }catch(e){} } wantSound = !audio.muted; }
+  localStorage.setItem('bgmEnabled', String(wantSound)); setIcon();
+});
+document.addEventListener('DOMContentLoaded', tryAutoplay);
+</script>
 
 
 

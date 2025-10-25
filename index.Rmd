@@ -11,9 +11,9 @@ description: "A cute birthday page"
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-</style> <div class="container"> <h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> 亲爱的妍琦，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直： </p> <ul style="margin-top:0; line-height:1.9;"> <li>健康顺遂，睡个好觉；</li> <li>朝朝如愿，岁岁平安；</li> <li>自由恣意，坦荡随心</li>
+</style> <div class="container"> <h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> <br> 亲爱的妍琦，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直： </p> <ul style="margin-top:0; line-height:1.9;"> <li>健康顺遂，睡个好觉；</li> <li>朝朝如愿，岁岁平安；</li> <li>自由恣意，坦荡随心</li>
 </li></li>
-<ul style="margin-top:0; line-height:1.9; list-style:none; padding-left:0;">
+<ul style="margin-top:0; line-height:1.9; list-style:none; padding-left:0;"> <br>
 <li style="font-size:2.25rem;"><em> “None of us are as young as we were</em></li>
   <li style="font-size:2.25rem;"><em>So what?</em></li>
   <li style="font-size:2.25rem;"><em>Friendship never ages” 🌸</em></li>

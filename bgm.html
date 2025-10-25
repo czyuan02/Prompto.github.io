@@ -1,0 +1,25 @@
+<!-- 背景音乐片段：全站加载 -->
+<audio id="bgm" preload="auto" autoplay muted loop playsinline>
+  <source src="Porsche.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-toggle" aria-label="Toggle background music"
+        style="position:fixed; right:16px; bottom:16px; z-index:9999;
+               border:none; border-radius:999px; padding:10px 12px;
+               box-shadow:0 6px 18px rgba(0,0,0,.15); font-size:18px;
+               background:#fff;">🔇</button>
+
+<script>
+const audio = document.getElementById('bgm');
+const btn   = document.getElementById('music-toggle');
+const saved = localStorage.getItem('bgmEnabled');
+let wantSound = saved === 'true';
+function setIcon(){ btn.textContent = (audio.muted || audio.paused) ? '🔇' : '🔊'; }
+function tryAutoplay(){ audio.muted = !wantSound; audio.play().then(setIcon).catch(()=>{ audio.muted = true; setIcon(); }); }
+btn.addEventListener('click', async () => {
+  if (audio.paused) { audio.muted = false; try{ await audio.play(); }catch(e){}; wantSound = true; }
+  else { audio.muted = !audio.muted; if (!audio.muted && audio.paused) { try{ await audio.play(); }catch(e){} } wantSound = !audio.muted; }
+  localStorage.setItem('bgmEnabled', String(wantSound)); setIcon();
+});
+document.addEventListener('DOMContentLoaded', tryAutoplay);
+</script>
