@@ -160,11 +160,11 @@ figcaption { text-align: center; }
 ## 🤍啦啦啦!
 <div class="grid">
   <figure class="card">
-    <img src="photo/recent.JPG" alt="合照1">
+    <img src="photo/ny2.jpg " alt="合照1">
     <figcaption>🎉</figcaption>
   </figure>
   <figure class="card">
-    <img src="photo/ny2.jpg" alt="合照2">
+    <img src="photo/recent.JPG" alt="合照2">
     <figcaption>🎈</figcaption>
   </figure>
   <figure class="card">
