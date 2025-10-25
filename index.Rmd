@@ -11,7 +11,91 @@ description: "A cute birthday page"
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-</style> <div class="container"> <h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> <br> 亲爱的徐妍琦，我最好的朋友，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直 </p> <ul style="margin-top:0; line-height:1.9;font-style:italic;"> <li>健康顺遂，睡个好觉</li> <li>朝朝如愿，岁岁平安</li> <li>自由恣意，坦荡随心</li>
+</style> <div class="container"> 
+
+<!-- ====== 倒计时（北京时间；当天整天显示祝福） ====== -->
+<div class="card" id="countdown-card" style="padding:16px; text-align:center; margin-bottom:16px;">
+  <h3 style="margin:6px 0 10px;">🎂 距离妍琦生日还有</h3>
+  <div id="countdown" style="font-size:2rem; line-height:1; letter-spacing:1px; margin:6px 0 2px;">
+    -- 天 --:--:--
+  </div>
+  <div style="color:var(--muted, #7a6f6a); font-size:.95rem;" id="countdown-date">
+    目标：北京时间 10-30
+  </div>
+</div>
+
+<script>
+const BIRTH_MM = 10, BIRTH_DD = 30;
+
+// 取“现在”的北京时间
+function beijingNow() {
+  return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+}
+
+// 计算目标时刻与“今天是否生日”
+function getTargetAndFlag() {
+  const nowBJ = beijingNow();
+  const y = nowBJ.getFullYear();
+
+  const isToday = (nowBJ.getMonth() + 1 === BIRTH_MM) && (nowBJ.getDate() === BIRTH_DD);
+  if (isToday) return { target: null, isBirthdayToday: true };
+
+  // 不是当天：目标 = 今年 10/30 00:00（北京时间）；若已过则跳到明年
+  const mm = String(BIRTH_MM).padStart(2,'0');
+  const dd = String(BIRTH_DD).padStart(2,'0');
+  let target = new Date(`${y}-${mm}-${dd}T00:00:00+08:00`);
+  const now = new Date();
+  if (target <= now) target = new Date(`${y+1}-${mm}-${dd}T00:00:00+08:00`);
+  return { target, isBirthdayToday: false };
+}
+
+const { target, isBirthdayToday } = getTargetAndFlag();
+const el  = document.getElementById('countdown');
+const tip = document.getElementById('countdown-date');
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function render(){
+  if (isBirthdayToday){
+    el.textContent = '🎉 生日快乐！Happy Birthday!';
+    el.style.fontSize = '1.6rem';
+    tip.textContent = '今天是北京时间的 10 月 30 日';
+    return;
+  }
+  const now = new Date();
+  let ms = target - now;
+  if (ms <= 0){
+    el.textContent = '🎉 生日快乐！Happy Birthday!';
+    el.style.fontSize = '1.6rem';
+    return;
+  }
+  const sec = Math.floor(ms/1000);
+  const d = Math.floor(sec / 86400);
+  const h = Math.floor((sec % 86400) / 3600);
+  const m = Math.floor((sec % 3600) / 60);
+  const s = sec % 60;
+  el.textContent = `${d} 天 ${pad(h)}:${pad(m)}:${pad(s)}`;
+
+  // 目标时刻（北京时间）的人类可读显示
+  try {
+    const fmt = new Intl.DateTimeFormat('zh-CN', {
+      timeZone: 'Asia/Shanghai',
+      dateStyle: 'full',
+      timeStyle: 'short'
+    });
+    tip.textContent = '（北京时间）：' + fmt.format(target);
+  } catch(e) {
+    tip.textContent = '（北京时间）：10-30';
+  }
+}
+
+render();
+const timer = setInterval(render, 1000);
+</script>
+<!-- ====== /倒计时 ====== -->
+
+
+<h1 class="huge-title">Happy Birthday, Yanqi ✨</h1> <p class="subtitle">专属你的一天，愿每个愿望都被温柔对待🎂</p> <div class="grid"> <!-- 左：祝福与按钮 --> <div class="card" markdown="0"> <h3 style="margin-top:0">来自日常在微信讲废话、备忘录绑定账号的我</h3> <p style="font-size:1.50rem; line-height:1.9; margin-bottom:6px;"> <br> 亲爱的徐妍琦，我最好的朋友，臭狸子，生日快乐！恭喜你二十三岁啦💖谢谢你一直以来的陪伴与鼓励，今后我会继续骚扰你😈，也希望你新的一岁里能够一直 </p> <ul style="margin-top:0; line-height:1.9;font-style:italic;"> <li>健康顺遂，睡个好觉</li> <li>朝朝如愿，岁岁平安</li> <li>自由恣意，坦荡随心</li>
 </li></li>
 <ul style="margin-top:0; line-height:1.9; list-style:none; padding-left:0;font-style:italic;"> <br>
 <li style="font-size:2.25rem;"><em> “None of us are as young as we were</em></li>
