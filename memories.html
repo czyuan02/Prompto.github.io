@@ -393,11 +393,45 @@ figcaption { text-align: center; }
 .float-emoji:nth-child(2){ animation-delay:.4s }
 .float-emoji:nth-child(3){ animation-delay:.8s }
 
+.back-to-top{
+  position:fixed; right:16px; bottom:18px; z-index:99;
+  width:42px; height:42px; border-radius:50%;
+  background:#fff; border:1px solid var(--border);
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:18px; color:#666;
+}
+.back-to-top:hover{ transform: translateY(-2px); }
+
+.slant {
+  font-style: oblique 10deg;   /* 没有 italic 时更自然 */
+}
+
+/* 如果你想更明显一点，改成 12~14deg */
+.slant-strong {
+  font-style: oblique 14deg;
+}
+
+/* 最简浮标：一直可见 */
+.fab {
+  position: fixed; z-index: 9999;
+  right: 16px; bottom: 70px;      /* 右下角位置 */
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--border, #eee0d8);
+  box-shadow: 0 8px 18px rgba(0,0,0,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: #666; text-decoration: none;
+  cursor: pointer;
+}
+.fab:hover{ transform: translateY(-2px); }
 
 </style>
 <p>
  
 </p>
+<p><a id="top"></a></p>
 <div id="cool" class="section level2 center-title cn-rounded">
 <h2 class="center-title cn-rounded">✨COOL</h2>
 <figure class="hero card">
@@ -534,10 +568,12 @@ class="section level2 center-title cute-roundstack">
 </figure>
 </div>
 <hr/>
-<p class="cn-song quote-center">
-愿岁并谢 与长友兮
+<p class="cn-song quote-center slant">
+“愿岁并谢 与长友兮”
 </p>
 <p><a class="back-top" href="index.html">← 返回 Birthday 首页</a></p>
+<!-- 固定浮标：回到顶部 -->
+<p><a class="fab" href="#top" title="回到顶部">↑</a></p>
 </div>
 
 <!-- 背景音乐片段：全站加载 -->
