@@ -233,3 +233,107 @@ const timer = setInterval(render, 1000);
   grid.appendChild(row); // 关键：插在 .grid 的最后
 })();
 </script>
+
+
+
+
+<!-- ========== 滚动卡顿监测 & 角落缓冲提示（非全屏，不拦截） ========== -->
+<style>
+  .lag-hint{
+    position:fixed; right:14px; bottom:calc(env(safe-area-inset-bottom,0px) + 14px);
+    z-index:10002; /* 高于内容，但不盖住你的浮层按钮 */
+    display:flex; align-items:center; gap:10px;
+    background:rgba(255,255,255,.96); border:1px solid #e9dfd7; border-radius:14px;
+    padding:8px 12px; box-shadow:0 8px 22px rgba(0,0,0,.12);
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial; color:#433;
+    pointer-events:none;  /* 绝不拦截滚动/点击 */
+    transform:translateY(18px); opacity:0; transition:opacity .2s ease, transform .2s ease;
+  }
+  .lag-hint.on{ transform:translateY(0); opacity:1; }
+  .lag-hint .spin{
+    width:16px; height:16px; border-radius:999px;
+    border:2px solid #eee; border-top-color:#c58; animation:spin 1s linear infinite;
+  }
+  .lag-hint .txt{ font-size:.9rem; color:#7a6f6a; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+</style>
+
+<div id="lagHint" class="lag-hint" aria-live="polite" aria-atomic="true" role="status">
+  <i class="spin" aria-hidden="true"></i>
+  <span class="txt">缓冲中…</span>
+</div>
+
+<script>
+(function(){
+  /** 可调参数 **/
+  const FRAME_GAP_MS     = 240;   // 判定“卡”的rAF缺口阈值（>240ms基本可感知卡顿）
+  const MIN_SHOW_MS      = 800;   // 提示最少显示多久
+  const MAX_SHOW_MS      = 4000;  // 单次最多显示时长（兜底）
+  const STABLE_HIDE_MS   = 300;   // 恢复平稳后再延迟收起
+  const WATCH_ON_SCROLL  = true;  // 仅在有滚动/触摸时才重点监测
+  const WATCH_ALWAYS     = false; // 如需全时段监测可设为true
+
+  const hint = document.getElementById('lagHint');
+  let activeGesture = false;      // 是否处于滚动/触摸期
+  let needWatch = WATCH_ALWAYS;   // 是否监控
+  let rafId = 0, lastTs = performance.now();
+  let lagging = false;
+  let showAt = 0, hideTimer = 0, forceHideTimer = 0;
+  let stableStart = 0;
+
+  function showHint(){
+    if (lagging) return;
+    lagging = true;
+    showAt = performance.now();
+    clearTimeout(hideTimer); clearTimeout(forceHideTimer);
+    hint.classList.add('on');
+    // 最长兜底
+    forceHideTimer = setTimeout(hideHint, MAX_SHOW_MS);
+  }
+  function hideHint(){
+    if (!lagging) return;
+    lagging = false;
+    clearTimeout(hideTimer); clearTimeout(forceHideTimer);
+    const elapsed = performance.now() - showAt;
+    const remain = Math.max(0, MIN_SHOW_MS - elapsed);
+    hideTimer = setTimeout(()=> hint.classList.remove('on'), remain);
+  }
+
+  function loop(ts){
+    const gap = ts - lastTs;
+    lastTs = ts;
+
+    if (needWatch){
+      if (gap > FRAME_GAP_MS){
+        // 检测到卡顿
+        showHint();
+        stableStart = 0; // 重新计平稳时间
+      } else {
+        // 平稳累积
+        if (lagging){
+          if (stableStart === 0) stableStart = ts;
+          if (ts - stableStart >= STABLE_HIDE_MS) hideHint();
+        }
+      }
+    }
+    rafId = requestAnimationFrame(loop);
+  }
+  rafId = requestAnimationFrame(loop);
+
+  // 只在“滚动/触摸期”打开监控（节能&更贴近需求）
+  if (WATCH_ON_SCROLL){
+    const opt = {passive:true};
+    const onStart = ()=>{ needWatch = true; activeGesture = true; };
+    const onEnd   = ()=>{ activeGesture = false; /* 结束手势后稍等再停表 */ setTimeout(()=>{ if(!activeGesture && !WATCH_ALWAYS){ needWatch = false; } }, 200); };
+
+    window.addEventListener('scroll', onStart, opt);
+    window.addEventListener('wheel', onStart, opt);
+    window.addEventListener('touchstart', onStart, opt);
+    window.addEventListener('touchmove', onStart, opt);
+    window.addEventListener('touchend', onEnd, opt);
+    window.addEventListener('touchcancel', onEnd, opt);
+    document.addEventListener('visibilitychange', ()=>{ if(document.hidden) hideHint(); }, opt);
+  }
+})();
+</script>
+<!-- ========== /滚动卡顿监测 ========== -->
