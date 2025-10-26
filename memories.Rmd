@@ -166,7 +166,7 @@ figcaption { text-align: center; }
 /* 最简浮标：一直可见 */
 .fab {
   position: fixed; z-index: 9999;
-  right: 16px; bottom: 70px;      /* 右下角位置 */
+  right: 16px; top: 70px;      /* 右下角位置 */
   width: 48px; height: 48px;
   border-radius: 50%;
   background: #fff;
