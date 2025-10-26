@@ -260,9 +260,9 @@ figcaption { text-align: center; }
 <hr/>
 
 <p style="text-align:center; font-size:1.6rem;">
-  <span class="float-emoji">🍓</span>
-  <span class="float-emoji">🍑</span>
-  <span class="float-emoji">🍰</span>
+  <span class="float-emoji">🐶</span>
+  <span class="float-emoji">🎄</span>
+  <span class="float-emoji">🎁</span>
 </p>
 
 
