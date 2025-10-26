@@ -187,7 +187,7 @@ figcaption { text-align: center; }
 
 ## ✨COOL {.center-title .cn-rounded}
 <figure class="hero card">
-  <img src="photo/b.jpg" alt="小猫">
+  <img src="photo/b.jpg" alt="小猫" style="object-position: center 75%;">
   <figcaption> COOL✨</figcaption>
 </figure>
 
@@ -292,8 +292,10 @@ figcaption { text-align: center; }
 ## 第五人格启动！{.center-title .cute-roundstack}
 <figure class="hero card" style="max-width:500px; margin:auto;">
   <img src="photo/sea.jpg" alt="打游戏我拽她" style="width:100%; height:auto;" loading="lazy">
-  <figcaption>“山林不向四季起誓，荣枯随缘 
-  海洋不需对沙岸承诺，遇合尽兴”</figcaption>
+  <figcaption>
+  山林不需向四季起誓，荣枯随缘 <br/>
+  海洋不需对沙岸承诺，遇合尽兴
+  </figcaption>
 </figure>
 
 <hr/>
@@ -305,11 +307,11 @@ figcaption { text-align: center; }
     <figcaption>💫</figcaption>
   </figure>
   <figure class="card">
-    <img src="photo/x2.jpg" alt="合照2">
+    <img src="photo/x2.jpg" alt="合照2" style="object-position: center 80%;">
     <figcaption>🎣</figcaption>
   </figure>
   <figure class="card">
-    <img src="photo/x3.jpg" alt="合照3">
+    <img src="photo/x3.jpg" alt="合照3" style="object-position: center 50%;">
     <figcaption>🏡</figcaption>
   </figure>
   <figure class="card">
@@ -317,13 +319,13 @@ figcaption { text-align: center; }
     <figcaption></figcaption>
   </figure>
   <figure class="card">
-    <img src="photo/x5.jpg" alt="合照5">
-    <figcaption>️</figcaption>
+  <img src="photo/x5.jpg" alt="合照5" style="object-position: center 90%;">
+  <figcaption>️</figcaption>
   </figure>
   <figure class="card">
-    <img src="photo/x6.jpg" alt="合照6">
-    <figcaption></figcaption>
-  </figure>
+  <img src="photo/x6.jpg" alt="合照6" style="object-position: center 90%;">
+  <figcaption></figcaption>
+</figure>
 </div>
 
 </div>
